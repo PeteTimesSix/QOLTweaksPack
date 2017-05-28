@@ -35,6 +35,9 @@
 <SurgeryEstimationMode_title>	Skill required for accurate estimates</SurgeryEstimationMode_title>
 <SurgeryEstimationMode_desc></SurgeryEstimationMode_desc>
 
+<BruiseWalkingOff_title>Walking off bruises</BruiseWalkingOff_title>
+<BruiseWalkingOff_desc>Doctors will no longer waste medicine on injuries with no risk of permanent effects or infections.</BruiseWalkingOff_desc>
+
 <SurgeryEstimateAccountForTraits_title>	Account for traits</SurgeryEstimateAccountForTraits_title>
 <SurgeryEstimateAccountForTraits_desc>Account for pawn traits (such as Optimist or Sadist) in surgery success estimate calculation. The better the doctor, the less do their personal biases affect their estimate.</SurgeryEstimateAccountForTraits_desc>
 <SurgeryEstimationMode_option_AlwaysAccurate>Anyone</SurgeryEstimationMode_option_AlwaysAccurate>

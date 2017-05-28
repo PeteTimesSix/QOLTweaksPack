@@ -36,6 +36,7 @@ namespace QOLTweaksPack
         internal static SettingHandle<bool> SurgeryEstimates;
         internal static SettingHandle<SurgeryEstimateMode> SurgeryEstimationMode;
         internal static SettingHandle<bool> SurgeryEstimateAccountForTraits;
+        internal static SettingHandle<bool> BruiseWalkingOff;
 
         private static Color noHighlight = new Color(0, 0, 0, 0);
         private static Color highlight1 = new Color(0.5f, 0, 0, 0.1f);
@@ -80,6 +81,9 @@ namespace QOLTweaksPack
                     };
             SurgeryEstimateAccountForTraits = Settings.GetHandle<bool>("SurgeryEstimateAccountForTraits", "SurgeryEstimateAccountForTraits_title".Translate(), "SurgeryEstimateAccountForTraits_desc".Translate(), true);
             SurgeryEstimateAccountForTraits.CustomDrawer = rect => { return SettingUIs.HugsDrawerRebuild_Checkbox(SurgeryEstimateAccountForTraits, rect, highlight5); };
+
+            BruiseWalkingOff = Settings.GetHandle<bool>("BruiseWalkingOff", "BruiseWalkingOff_title".Translate(), "BruiseWalkingOff_desc".Translate(), true);
+            BruiseWalkingOff.CustomDrawer = rect => { return SettingUIs.HugsDrawerRebuild_Checkbox(BruiseWalkingOff, rect, highlight5); };
 
         }
 

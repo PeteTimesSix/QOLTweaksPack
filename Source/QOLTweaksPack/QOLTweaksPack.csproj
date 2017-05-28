@@ -66,6 +66,7 @@
     <Compile Include="rimworld\NewOrderJobDefOf.cs" />
     <Compile Include="rimworld\SavedData.cs" />
     <Compile Include="rimworld\TextureResources.cs" />
+    <Compile Include="tweaks\BruiseMedicineless.cs" />
     <Compile Include="tweaks\ButcheringSpaceEfficiency.cs" />
     <Compile Include="tweaks\CookingEquivalency.cs" />
     <Compile Include="tweaks\NewOrders.cs" />

@@ -20,7 +20,7 @@ namespace QOLTweaksPack.tweaks
         private static void GetReport(JobDriver_DoBill __instance)
         {
             bool isSurgery = (hasSurgeryAsJob(__instance.pawn));
-            Log.Message("isSurgery:" + isSurgery + " (" + __instance.pawn.jobs.curJob.RecipeDef.workerClass + ")");
+            //Log.Message("isSurgery:" + isSurgery + " (" + __instance.pawn.jobs.curJob.RecipeDef.workerClass + ")");
             if (!isSurgery)
             {
                 UIRoot_Play_UIRootOnGUI_Prefix.shouldDrawSurgeryRect = false;
@@ -423,7 +423,7 @@ namespace QOLTweaksPack.tweaks
             }
             else
             {
-                Log.Message("trait check");
+                //Log.Message("trait check");
 
                 float skillMod = ((20f - surgeon.skills.GetSkill(SkillDefOf.Medicine).Level) / 20f);
                 //first apply modifiers
@@ -439,7 +439,7 @@ namespace QOLTweaksPack.tweaks
 
                     surgeryOdds = surgeryOdds.addSpec(addition);
 
-                    Log.Message("modified odds by " + addition + " due to mood trait");
+                    //Log.Message("modified odds by " + addition + " due to mood trait");
                 }
 
 
@@ -455,7 +455,7 @@ namespace QOLTweaksPack.tweaks
 
                     surgeryOdds = surgeryOdds.multSpec(mult);
 
-                    Log.Message("modified odds by " + mult + " due to psychopath trait");
+                    //Log.Message("modified odds by " + mult + " due to psychopath trait");
                     return surgeryOdds;
                 }
 
