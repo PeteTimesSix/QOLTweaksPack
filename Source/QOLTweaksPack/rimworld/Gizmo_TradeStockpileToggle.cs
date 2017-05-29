@@ -47,7 +47,7 @@ namespace QOLTweaksPack.rimworld
 
             GUI.DrawTexture(gizmoRect, gizmoTex);
 
-            Log.Warning(gizmoRect.ToString());
+            // Log.Warning(gizmoRect.ToString());
 
             TooltipHandler.TipRegion(gizmoRect, gizmoMouseover);
             MouseoverSounds.DoRegion(gizmoRect, SoundDefOf.MouseoverCommand);
