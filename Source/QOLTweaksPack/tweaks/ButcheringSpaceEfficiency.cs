@@ -52,7 +52,7 @@ namespace QOLTweaksPack.tweaks
 
             if (chosen.Count < 1 || chosen.Count > 1 || chosen[0].count != 1)
             {
-                Log.Message("Butchering something other than a single corpse. U wot?");
+                return;
             }
             Thing corpse = chosen[0].thing;
 
