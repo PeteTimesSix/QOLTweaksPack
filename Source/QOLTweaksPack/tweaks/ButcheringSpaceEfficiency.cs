@@ -57,7 +57,7 @@ namespace QOLTweaksPack.tweaks
             Thing corpse = chosen[0].thing;
 
             if (corpse as Corpse == null)
-                throw new Exception("Corpse " + corpse.Label + " isnt a corpse");
+                return;
 
             if (!CanStoreCount(bill.Map, MeatDefFor(corpse as Corpse), EstimatedMeatCount(corpse as Corpse)))
             {
@@ -75,7 +75,8 @@ namespace QOLTweaksPack.tweaks
                         testedRaces.Add((alternativeCorpse as Corpse).InnerPawn.def);
 
                     if (alternativeCorpse as Corpse == null)
-                        throw new Exception("Corpse " + alternativeCorpse.Label + " isnt a corpse");
+                        continue;
+
                     if (CanStoreCount(bill.Map, MeatDefFor(alternativeCorpse as Corpse), EstimatedMeatCount(alternativeCorpse as Corpse)))
                     {
                         __result = true;
