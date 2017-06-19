@@ -10,6 +10,22 @@ using Verse;
 
 namespace QOLTweaksPack.tweaks
 {
+    [HarmonyPatch(typeof(Zone), "Delete")]
+    static class Zone_Delete_Prefix
+    {
+        [HarmonyPrefix]
+        private static void Delete(Zone __instance)
+        {
+            if (!(__instance is Zone_Stockpile))
+                return;
+
+            if (QOLTweaksPack.savedData.StockpileIsTradeStockpile(__instance as Zone_Stockpile))
+            {
+                QOLTweaksPack.savedData.RemoveTradeStockpile(__instance as Zone_Stockpile);
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(Dialog_Trade), "PostOpen")]
     static class Dialog_Trade_PostOpen_Postfix
     {
@@ -27,6 +43,9 @@ namespace QOLTweaksPack.tweaks
             {
                 foreach (Thing tradeableThing in tradeable.thingsColony)
                 {
+                    if (tradeableThing is Pawn)
+                        continue;
+
                     if (tradeableThing.holdingOwner != null)
                     {
                         SlotGroup storage = StoreUtility.GetSlotGroup(tradeableThing);
@@ -36,7 +55,7 @@ namespace QOLTweaksPack.tweaks
                         {
                             if (QOLTweaksPack.savedData.StockpileIsTradeStockpile(storage.parent as Zone_Stockpile))
                             {
-                                if (tradeable.CanAdjustBy(-tradeableThing.stackCount).Accepted)
+                                if (tradeable.CanAdjustBy(-tradeableThing.stackCount).Accepted & tradeable.TraderWillTrade)
                                     tradeable.AdjustBy(-tradeableThing.stackCount);
                             }
                         }

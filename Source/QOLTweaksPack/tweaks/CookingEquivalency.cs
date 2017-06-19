@@ -53,6 +53,8 @@ namespace QOLTweaksPack.tweaks
                 return;
             if (__instance.repeatMode != BillRepeatModeDefOf.TargetCount)
                 return;
+            if (__instance.recipe.products.Count() <= 0)
+                return;
 
             ThingDef product = __instance.recipe.products[0].thingDef;
             if (QOLTweaksPack.MealSelection.Value.InnerList.Contains(product.defName))
